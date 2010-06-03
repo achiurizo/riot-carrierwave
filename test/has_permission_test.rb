@@ -4,7 +4,7 @@ context "has_permission macro" do
   setup do
     Uploader.enable_processing = true
     @uploader = Uploader.new
-    @uploader.store! fixture('test.jpg')
+    @uploader.store! File.open(fixture('test.jpg'))
     @uploader
   end
     
