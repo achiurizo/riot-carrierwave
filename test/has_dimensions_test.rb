@@ -8,7 +8,7 @@ context "has_dimensions macro" do
     @uploader
   end
     
-  asserts "passes when the dimensionss matches"  do 
+  asserts "passes when the dimensions matches"  do 
     RiotCarrierwave::HasDimensionsAssertion.new.evaluate(topic, 600,396).first
   end.equals :pass
   
@@ -16,7 +16,7 @@ context "has_dimensions macro" do
     RiotCarrierwave::HasDimensionsAssertion.new.evaluate(topic, 600,396).last
   end.matches %r{Uploader has dimensions width 600px and height 396px}
   
-  asserts "fails when the dimensionss do not match" do 
+  asserts "fails when the dimensions do not match" do 
     RiotCarrierwave::HasDimensionsAssertion.new.evaluate(topic, 12,13).first
   end.equals :fail
   
